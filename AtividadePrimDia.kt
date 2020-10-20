@@ -35,4 +35,9 @@ fun main() {
     var preco: Double = 55.50;
     var desconto = 0.10;
     println("Voce tem 10% de desconto, valor a pagar = " + (preco - (preco*desconto)))
+    // Solução 9 (Alternativa)
+    val produtoPreco = 150.0
+    var desconto = 20.0
+    var valorDesconto = produtoPreco * (desconto/100)
+    println("Desconto de R$" + valorDesconto)
 }

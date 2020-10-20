@@ -1,0 +1,2 @@
+language = "kotlin"
+run = "run kotlinc-jvm for the interactive repl"
