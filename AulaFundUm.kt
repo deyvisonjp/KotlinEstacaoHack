@@ -1,38 +1,52 @@
-// Android CTA23 - Noite
-// Exercícios de Kotlin Nível I
+fun main(args: Array<String>) {
+      // Comentário em linha - 1º dia de Aula
+    
+    /* Comentário em . . .
+     . . . Multiplas . . . 
+     . . .  linhas 
+    */
+    
+    // Variáveis Mutáveis e Imutáveis
+    	// Variável Mutável
+    	var nome = "Kotlin Android"
+    	var idade = 18;
+    	var altura = 1.74;
+    	nome = "Fulano"
+    	idade = 25;
+    
+    	// Variável Imutável
+    	val tipoSanguineo = "O+";
+    	val CPF = "111555777-22"
+    	
+    
+    /* Tipos de dados
+     * Primitivos
+        - Inteiro: byte, short, int e long (var filhos = 0);
+        - Decimal: float e double (var peso = 70.5);
+        - Caractere: char (var genero = 'M');
+        - Booleano: boolean (false = 0 e true = 1);
+      * Não Primitivos
+        - String (var nome = "Antonio Dafonseca");
+    */
+    
+	// Declarando variáveis com inferência de dados:::
+        var linguagem = "Kotlin" // String
+        var letra = 'z' // Char
+        var ano = 1998 // Inteiro -> Int
+        var distancia = 99999999999L
+        var temperatura = 25.9 // Decimal -> Double
+        var media = 5.5f // Decimal -> Float
 
-fun main() {
-	// Solução 1
-	var nome = "Deyvison J Paula"
-    println("Olá, $nome!")
-        
-    //Solução 2
-    var a: Double = 5.9
-    var b: Double = 54.1
-    println("A soma de a + b = " + (a+b))
+	// Declarando Variáveis com tipo explicito:::
+        var valor : Float = 8.5f
+        var sobrenome : String = "Reis"
+        var caractere : Char = 'R'
+
+    // Concatenação
+    	println(nome + " - Tipo Sanguineo: " + tipoSanguineo + " - CPF: " + CPF);
+    	println("Idade: " + idade + " - Altura: " + altura);
     
-	//Solução 3
-	var x = 5;
-    println("$x ao quadrado = " + (x*x))
-	
-    // Solução 4
-    println("O dobro de $a = " + (a+a))
-    
-    // Solução 5
-    println("O Antecessor de $x é: [" + (x-1) + "] - E o Sucessor é: [" + (x+1) + "]")
-	// Solução 6
-    println("7 meses tem o total de " + (30*7) + " dias.")
-    
-    // Solução 7
-	var nota1 = 5; var nota2 = 10; var nota3 = 7; var nota4 = 7; var nota5 = 6.5;
-    println("A média das 5 notas é = " + ((nota1 + nota2 + nota3 + nota4 + nota5)/5))
-    
-	// Solução 8
-	var metros = 500;
-    println("$metros metros <=> " + metros*100 + " centímetros")
-    
-    // Solução 9
-    var preco: Double = 55.50;
-    var desconto = 0.10;
-    println("Voce tem 10% de desconto, valor a pagar = " + (preco - (preco*desconto)))
+    // Interpolação de Strings
+    var frase: String = "$nome $sobrenome tem $idade anos e programa em $linguagem"
+    println(frase)
 }
