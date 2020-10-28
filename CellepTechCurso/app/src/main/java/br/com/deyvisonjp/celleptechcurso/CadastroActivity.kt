@@ -76,7 +76,6 @@ class CadastroActivity : AppCompatActivity() {
 
                 // Fechar todas telas que estavam abertas por dependência a essa
                 finishAffinity()
-
             }
         }
 

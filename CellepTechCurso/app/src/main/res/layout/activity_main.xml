@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/corDeFundo"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -20,39 +21,93 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="20dp" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="150dp"
-        android:layout_height="80dp"
+    <TextView
+        android:id="@+id/txtMainSaudacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/come_ar"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Seja Bem Vindo(a)"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/txvMainNome"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.481" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:id="@+id/txvMainNome"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:rotation="0"
-        android:rotationX="0"
-        android:rotationY="0"
-        android:text="@string/vamos_l_buscar_as_esferas_do_drag_o"
-        android:textColor="#1640A8"
-        android:textSize="18sp"
-        android:visibility="visible"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="Nome Completo"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/txvMainEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMainSaudacao" />
+
+    <TextView
+        android:id="@+id/txvMainGenero"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Genêro"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnMainSair"
+        app:layout_constraintEnd_toEndOf="@+id/txvMainEmail"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/txvMainEmail"
+        app:layout_constraintTop_toBottomOf="@+id/txvMainEmail" />
+
+    <TextView
+        android:id="@+id/txvMainEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="E-mail"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/txvMainGenero"
+        app:layout_constraintEnd_toEndOf="@+id/txvMainNome"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/txvMainNome"
+        app:layout_constraintTop_toBottomOf="@+id/txvMainNome" />
+
+    <Button
+        android:id="@+id/btnMainSite"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/corBotao"
+        android:text="Site cellep"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.449"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.617" />
+        app:layout_constraintEnd_toEndOf="@+id/btnMainSair"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/btnMainSair"
+        app:layout_constraintTop_toBottomOf="@+id/btnMainSair" />
+
+    <Button
+        android:id="@+id/btnMainSair"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:backgroundTint="@color/corBotao"
+        android:text="Sair"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/btnMainSite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txvMainGenero" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package br.com.deyvisonjp.celleptechcurso
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -35,10 +36,16 @@ class LoginActivity : AppCompatActivity() {
             }
 
             else { //Campos não estão vazios
-                // Verificação de email e senha
-                if (email == "teste@teste.com" && senha == "123456") {
 
-                    // Exinindo uma mensagem usando o Toast -> makeText (tela a mostrar, texto a ser exibido, tempo a ser exibido)
+                // Criando Referencia ao Shared Preferences
+                val sharedPrefs = getSharedPreferences("cadastro_$email", Context.MODE_PRIVATE)
+                val emailLogin = sharedPrefs.getString("EMAIL", "")
+                val senhaLogin = sharedPrefs.getString("SENHA", "")
+
+                // Verificação de email e senha
+                if (email == emailLogin && senha == senhaLogin) {
+
+                    // Exibindo uma mensagem usando o Toast -> makeText (tela a mostrar, texto a ser exibido, tempo a ser exibido)
                     Toast.makeText(this, "Você acaba de logar . . .", Toast.LENGTH_SHORT).show()
 
                     // Abrir MainActivity
@@ -46,6 +53,8 @@ class LoginActivity : AppCompatActivity() {
                         this,
                         MainActivity::class.java
                     ) // Intent(Tela que estamos, tela a ser direcionada)
+
+                    mIntent.putExtra("INTENT_EMAIL", email)
 
                     startActivity(mIntent);
                     finish();
